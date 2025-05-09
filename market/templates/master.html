@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formset Example</title>
+</head>
+<body>
+<h1>Manage Records</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ formset.management_form }}
+    <table>
+        {% for form in formset %}
+        <tr>
+            {{ form.as_table }}
+        </tr>
+        {% endfor %}
+    </table>
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formset Example</title>
+</head>
+<body>
+
+
+
+    <h1>Manage Records</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ formset.management_form }}
+
+        {% if formset.non_form_errors %}
+        <ul>
+            {% for error in formset.non_form_errors %}
+            <li><em>{{ error|escape }}</em></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        <table>
+            {% for form in formset %}
+                <tr>
+                    {% for hidden in form.hidden_fields %}
+                        {{ hidden }}
+                    {% endfor %}
+
+                    {% if form.non_field_errors %}
+                    <ul>
+                        {% for error in form.non_field_errors %}
+                        <li><em>{{ error|escape }}</em></li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+
+                    {% for field in form.visible_fields %}
+                        <td>
+                            <label>{{ field.label_tag }}</label><br>
+                            {{ field }}<br>
+                            {% if field.errors %}
+                            <ul>
+                                {% for error in field.errors %}
+                                <li><em>{{ error|escape }}</em></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                            <small>{{ field.help_text }}</small>
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+
+        <button type="submit">Save</button>
+    </form>
+
+
+
+</body>
+</html>
+
+
+
+
+

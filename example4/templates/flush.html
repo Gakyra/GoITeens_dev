@@ -1,0 +1,21 @@
+<p>Old session key: {{ old_session_key }}</p>
+<p>New session key: {{ new_session_key }}</p>
+
+<p>Session value before flush: {{ test_before }}</p>
+<p>Session value after flush: {{ test_after }}</p>
+
+<p>Test cookie status: {% if test_cookie_working %}Working{% else %}Not set{% endif %}</p>
+
+<h2>Stuff List:</h2>
+<ul>
+    {% for item in stuff %}
+        <li>{{ item.name }} - {{ item.description }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Stars:</h2>
+<ul>
+    {% for star in stars %}
+        <li>⭐️ {{ star }}</li>
+    {% endfor %}
+</ul>

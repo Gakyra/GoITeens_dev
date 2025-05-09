@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список оголошень</title>
+</head>
+<body>
+    <h1>Список оголошень</h1>
+    <a href="{% url 'bb_create' %}">Додати оголошення</a>
+    <ul>
+        {% for bb in bbs %}
+            <li>{{ bb.title }} - {{ bb.content }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+<q></q>

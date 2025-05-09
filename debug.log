@@ -1,0 +1,11 @@
+HAlo
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 5341
+"GET /media/products/600_gallery_1701205005611601_0.webp HTTP/1.1" 304 0
+"GET /media/products/iPhone_16_Teal_PDP_Image_Position_1__en-IN_a179ad46-206c-44c7-8e9a-abd4c18091c8.webp HTTP/1.1" 304 0
+"GET /css/css/styles.css HTTP/1.1" 404 1850
+"GET /media/products/24709323_hb0NMAZ.webp HTTP/1.1" 304 0
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 8113
+INFO Watching for file changes with StatReloader
+INFO C:\Users\Admin\PycharmProjects\projectdjango\GoITeens\GoITeens\settings.py changed, reloading.

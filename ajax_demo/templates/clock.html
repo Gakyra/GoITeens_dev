@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Годинник</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h1>Поточний час:</h1>
+<h2 id="clock">--:--:--</h2>
+
+<script>
+
+    function updateClock() {
+        $.get('{% url 'get_time' %}', function(data) {
+            $('#clock').text(data.time);
+        });
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
+
+</body>
+</html>

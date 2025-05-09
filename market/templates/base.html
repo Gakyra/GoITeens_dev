@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Market{% endblock %}</title>
+    {% load static %}
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header class="bg-primary text-white p-3">
+        <div class="container">
+            <h1>Market</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'index' %}">Головна</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'about' %}">Про нас</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'contacts' %}">Контакти</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'login' %}">Вхід</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'register' %}">Реєстрація</a></li>
+                    <li class="nav-item">
+                        <form method="post" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-link nav-link text-white">Вихід</button>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mt-4">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="bg-light text-center p-3 mt-4">
+        <p>&copy; Market-GO</p>
+    </footer>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
