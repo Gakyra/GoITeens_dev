@@ -21,7 +21,7 @@ ALLOWED_HOSTS = ['dnkshrr.pythonanywhere.com', '*']  # Для локальног
 
 # Application definition
 INSTALLED_APPS = [
-    'courses',
+    # 'courses',
     'market',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -30,12 +30,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.humanize',
     'django.contrib.staticfiles',
-    'example2',
-    'user_permission',
-    'example4',
-    'sygma',
-    'mails',
-    'ajax_demo',
+    # 'example2',
+    # 'user_permission',
+    # 'example4',
+    # 'sygma',
+    # 'mails',
+    # 'ajax_demo',
 ]
 
 MIDDLEWARE = [
