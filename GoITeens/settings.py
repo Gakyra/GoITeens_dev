@@ -96,7 +96,7 @@ USE_TZ = True
 # Static files
 STATIC_URL = '/static/'  # Исправлено с 'css/' на стандартный путь
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # Путь, куда будут собираться статические файлы
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'staticfiles')]  # Папка для ваших собственных статических файлов
+
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
